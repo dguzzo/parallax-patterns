@@ -1,0 +1,181 @@
+@import "imports"
+
+// inspired greatly by http://keithclark.co.uk/articles/pure-css-parallax-websites/
+
+@mixin imageCover($imgIndex: 0)
+  background-image: url('images/background-#{$imgIndex}.jpg')
+  background-size: cover
+
+@mixin SourceSans
+  font-family: 'Source Sans Pro', sans-serif
+  font-weight: 300
+
+body, html 
+  overflow: hidden
+  @include SourceSans
+
+body 
+  font: 100% / 1.5 Arial
+
+* 
+  margin: 0
+  padding: 0
+
+
+.parallax 
+  font-size: 130%
+
+.title 
+  @include SourceSans
+  text-align: center
+  position: absolute
+  left: 50%
+  top: 50%
+  -webkit-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+
+
+.parallax 
+  height: 500px 
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: auto
+  -webkit-perspective: 300px
+  perspective: 300px
+
+
+.parallax__group 
+  position: relative
+  height: 500px 
+  height: 100vh
+  -webkit-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+
+.parallax__layer 
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+
+.parallax__layer--fore 
+  -webkit-transform: translateZ(90px) scale(.7)
+  transform: translateZ(90px) scale(.7)
+  z-index: 1
+
+
+.parallax__layer--base 
+  -webkit-transform: translateZ(0)
+  transform: translateZ(0)
+  z-index: 4
+
+
+.parallax__layer--back 
+  -webkit-transform: translateZ(-300px) scale(2)
+  transform: translateZ(-300px) scale(2)
+  z-index: 3
+
+
+.parallax__layer--deep 
+  -webkit-transform: translateZ(-600px) scale(3)
+  transform: translateZ(-600px) scale(3)
+  z-index: 2
+
+
+.parallax__group 
+  -webkit-transition: -webkit-transform 0.5s
+  transition: transform 0.5s
+
+#group1 
+  z-index: 5 
+
+  .parallax__layer--base 
+    @include imageCover(2)
+
+#group2 
+  z-index: 3 
+
+  .parallax__layer--back 
+    @include imageCover(1)
+
+#group3 
+  z-index: 4 
+
+  .parallax__layer--base 
+    @include imageCover(3)
+
+#group4 
+  z-index: 2 
+
+  .parallax__layer--deep 
+    @include imageCover(4)
+
+#group5 
+  z-index: 5
+
+  .parallax__layer--base
+    @include imageCover(5)
+
+#group6 
+  z-index: 3
+
+  .parallax__layer--back 
+    @include imageCover(6)
+
+
+#group8
+  z-index: 4
+
+  .parallax__layer--base 
+    @include imageCover(14)
+
+#group9
+  z-index: 2
+
+  .parallax__layer--deep 
+    @include imageCover(9)
+
+
+#group7 
+  z-index: 5
+
+  .parallax__layer--base 
+    @include imageCover(7)
+
+
+.title
+  padding: 12px
+  border-radius: 5px
+  background-color: transparentize(white, 0.12)
+  box-shadow: 0 0 19px rgba(0,0,0,0.5)
+  
+  img
+    display: block
+    margin: 0 auto
+  
+.widget
+  margin: 0
+  padding: 0
+  
+.sfmsb-follow-social-buttons.sfmsb-under a:last-of-type
+  margin-right: 0
+  
+.underline
+  text-decoration: underline
+
+.text-left
+  text-align: left
+
+.widget-title
+  @include SourceSans
+  font-size: 1.8rem
+  margin-bottom: 10px
+  text-transform: none
+
+p
+  margin-bottom: 10px
+
+.findMe
+  font-size: 80%
