@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['javascripts/**/*.js', '*.sass', 'public/index.html'],
+      files: ['javascripts/**/*.js', 'stylesheets/*.sass', 'public/index.html'],
       tasks: ['default']
     },
     sass: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= pkg.name %>.css': 'parallax-patterns.sass'
+          'stylesheets/<%= pkg.name %>.css': 'stylesheets/parallax-patterns.sass'
         }
       }
     }

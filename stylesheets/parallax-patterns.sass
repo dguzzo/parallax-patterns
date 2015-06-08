@@ -1,8 +1,6 @@
-// inspired greatly by http://keithclark.co.uk/articles/pure-css-parallax-websites/
+@import 'dynamic-groups'
 
-@mixin imageCover($imgIndex: 0)
-  background-image: url('images/background-#{$imgIndex}.jpg')
-  background-size: cover
+// inspired greatly by http://keithclark.co.uk/articles/pure-css-parallax-websites/
 
 @mixin SourceSans
   font-family: 'Source Sans Pro', sans-serif
@@ -88,23 +86,6 @@ body
   -webkit-transition: -webkit-transform 0.5s
   transition: transform 0.5s
 
-// important z-index ordering for this particular parallax style sequence
-$zIndexlist: 5 3 4 2
-$layerStylelist: base back base deep
-$zIndexlistLength: length($zIndexlist)
-$layerStylelistLength: length($layerStylelist)
-
-// annoyingly use $i + 1 because nth() is 1-based 
-@for $i from 0 through 13
-  #group#{$i+1}
-    // cycle through the list to assign proper repeating sequence of either 5 3 4 2 5 3 4 2 etc
-    z-index: nth($zIndexlist, ($i % $zIndexlistLength) + 1)
-    // same concept as above, but for layer style
-    $layerStyle: nth($layerStylelist, ($i % $layerStylelistLength) + 1)
-    
-    .parallax__layer--#{$layerStyle} 
-      @include imageCover($i+1)
-  
 
 .title
   padding: 12px

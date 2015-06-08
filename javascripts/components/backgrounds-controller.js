@@ -2,7 +2,8 @@ angular.module('parallax')
 .controller('BackgroundsController', ["$scope", function($scope) {
   var cycleLength = 4;
 
-  $scope.backgroundCount = 14;
+  $scope.coverBackgroundCount = 14;
+  $scope.patternBackgroundCount = 6;
 
   // http://stackoverflow.com/a/16824944/626369
   $scope.getNumber = function(num) {

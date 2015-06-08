@@ -1,0 +1,37 @@
+@mixin imageCover($imgIndex: 0)
+  background-image: url('../images/background-#{$imgIndex}.jpg')
+  background-size: cover
+
+@mixin imageRepeat($imgIndex: 0)
+  background-image: url('../images/pattern-#{$imgIndex}.png')
+
+
+// important z-index ordering for this particular parallax style sequence
+$zIndexlist: 5 3 4 2
+$layerStylelist: base back base deep
+$zIndexlistLength: length($zIndexlist)
+$layerStylelistLength: length($layerStylelist)
+
+$numCoverBackgrounds: 14
+// annoyingly use $i + 1 because nth() is 1-based 
+@for $i from 0 through ($numCoverBackgrounds - 1)
+  #coverGroup#{$i+1}
+    // cycle through the list to assign proper repeating sequence of either 5 3 4 2 5 3 4 2 etc
+    z-index: nth($zIndexlist, ($i % $zIndexlistLength) + 1)
+    // same concept as above, but for layer style
+    $layerStyle: nth($layerStylelist, ($i % $layerStylelistLength) + 1)
+    
+    .parallax__layer--#{$layerStyle} 
+      @include imageCover($i+1)
+  
+
+$numPatternBackgrounds: 6
+@for $i from 0 through ($numPatternBackgrounds - 1)
+  #patternGroup#{$i+1}
+    // cycle through the list to assign proper repeating sequence of either 5 3 4 2 5 3 4 2 etc
+    z-index: nth($zIndexlist, ($i % $zIndexlistLength) + 1)
+    // same concept as above, but for layer style
+    $layerStyle: nth($layerStylelist, ($i % $layerStylelistLength) + 1)
+    
+    .parallax__layer--#{$layerStyle} 
+      @include imageRepeat($i+1)

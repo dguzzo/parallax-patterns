@@ -1,5 +1,12 @@
 <!-- inspired greatly by http://keithclark.co.uk/articles/pure-css-parallax-websites/ -->
-<div id="group{{$index + 1}}" class="parallax__group" ng-repeat='background in getNumber(backgroundCount) track by $index'>
+<div id="coverGroup{{$index + 1}}" class="parallax__group" ng-repeat='background in getNumber(coverBackgroundCount) track by $index'>
+  <div ng-if="indexCycleMod($index, 3)" class="parallax__layer parallax__layer--fore"></div>
+  <div class="parallax__layer parallax__layer--base"></div>
+  <div ng-if="indexCycleMod($index, 2) || indexCycleMod($index, 0)" class="parallax__layer parallax__layer--back"></div>
+  <div ng-if="indexCycleMod($index, 0)" class="parallax__layer parallax__layer--deep"></div>
+</div>
+
+<div id="patternGroup{{$index + 1}}" class="parallax__group" ng-repeat='background in getNumber(patternBackgroundCount) track by $index'>
   <div ng-if="indexCycleMod($index, 3)" class="parallax__layer parallax__layer--fore"></div>
   <div class="parallax__layer parallax__layer--base"></div>
   <div ng-if="indexCycleMod($index, 2) || indexCycleMod($index, 0)" class="parallax__layer parallax__layer--back"></div>

@@ -1,0 +1,221 @@
+#coverGroup1 {
+  z-index: 5; }
+  #coverGroup1 .parallax__layer--base {
+    background-image: url("../images/background-1.jpg");
+    background-size: cover; }
+
+#coverGroup2 {
+  z-index: 3; }
+  #coverGroup2 .parallax__layer--back {
+    background-image: url("../images/background-2.jpg");
+    background-size: cover; }
+
+#coverGroup3 {
+  z-index: 4; }
+  #coverGroup3 .parallax__layer--base {
+    background-image: url("../images/background-3.jpg");
+    background-size: cover; }
+
+#coverGroup4 {
+  z-index: 2; }
+  #coverGroup4 .parallax__layer--deep {
+    background-image: url("../images/background-4.jpg");
+    background-size: cover; }
+
+#coverGroup5 {
+  z-index: 5; }
+  #coverGroup5 .parallax__layer--base {
+    background-image: url("../images/background-5.jpg");
+    background-size: cover; }
+
+#coverGroup6 {
+  z-index: 3; }
+  #coverGroup6 .parallax__layer--back {
+    background-image: url("../images/background-6.jpg");
+    background-size: cover; }
+
+#coverGroup7 {
+  z-index: 4; }
+  #coverGroup7 .parallax__layer--base {
+    background-image: url("../images/background-7.jpg");
+    background-size: cover; }
+
+#coverGroup8 {
+  z-index: 2; }
+  #coverGroup8 .parallax__layer--deep {
+    background-image: url("../images/background-8.jpg");
+    background-size: cover; }
+
+#coverGroup9 {
+  z-index: 5; }
+  #coverGroup9 .parallax__layer--base {
+    background-image: url("../images/background-9.jpg");
+    background-size: cover; }
+
+#coverGroup10 {
+  z-index: 3; }
+  #coverGroup10 .parallax__layer--back {
+    background-image: url("../images/background-10.jpg");
+    background-size: cover; }
+
+#coverGroup11 {
+  z-index: 4; }
+  #coverGroup11 .parallax__layer--base {
+    background-image: url("../images/background-11.jpg");
+    background-size: cover; }
+
+#coverGroup12 {
+  z-index: 2; }
+  #coverGroup12 .parallax__layer--deep {
+    background-image: url("../images/background-12.jpg");
+    background-size: cover; }
+
+#coverGroup13 {
+  z-index: 5; }
+  #coverGroup13 .parallax__layer--base {
+    background-image: url("../images/background-13.jpg");
+    background-size: cover; }
+
+#coverGroup14 {
+  z-index: 3; }
+  #coverGroup14 .parallax__layer--back {
+    background-image: url("../images/background-14.jpg");
+    background-size: cover; }
+
+#patternGroup1 {
+  z-index: 5; }
+  #patternGroup1 .parallax__layer--base {
+    background-image: url("../images/pattern-1.png"); }
+
+#patternGroup2 {
+  z-index: 3; }
+  #patternGroup2 .parallax__layer--back {
+    background-image: url("../images/pattern-2.png"); }
+
+#patternGroup3 {
+  z-index: 4; }
+  #patternGroup3 .parallax__layer--base {
+    background-image: url("../images/pattern-3.png"); }
+
+#patternGroup4 {
+  z-index: 2; }
+  #patternGroup4 .parallax__layer--deep {
+    background-image: url("../images/pattern-4.png"); }
+
+#patternGroup5 {
+  z-index: 5; }
+  #patternGroup5 .parallax__layer--base {
+    background-image: url("../images/pattern-5.png"); }
+
+#patternGroup6 {
+  z-index: 3; }
+  #patternGroup6 .parallax__layer--back {
+    background-image: url("../images/pattern-6.png"); }
+
+body, html {
+  overflow: hidden;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300; }
+
+body {
+  font: 100%/1.5 Arial;
+  background: #050505; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.parallax {
+  font-size: 130%;
+  display: block; }
+
+.title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.parallax {
+  height: 500px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px; }
+
+.parallax__group {
+  position: relative;
+  height: 500px;
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+  z-index: 1; }
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4; }
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3; }
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2; }
+
+.parallax__group {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s; }
+
+.title {
+  padding: 12px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.5); }
+  .title img {
+    display: block;
+    margin: 0 auto; }
+
+.widget {
+  margin: 0;
+  padding: 0; }
+
+.sfmsb-follow-social-buttons.sfmsb-under a:last-of-type {
+  margin-right: 0; }
+
+.underline {
+  text-decoration: underline; }
+
+.text-left {
+  text-align: left; }
+
+.widget-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-transform: none; }
+
+p {
+  margin-bottom: 10px; }
+
+.findMe {
+  font-size: 80%; }
