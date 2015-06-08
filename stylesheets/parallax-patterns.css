@@ -112,6 +112,9 @@
   #patternGroup6 .parallax__layer--back {
     background-image: url("../images/pattern-6.png"); }
 
+html {
+  font-size: 16px; }
+
 body, html {
   overflow: hidden;
   font-family: "Source Sans Pro", sans-serif;
@@ -126,7 +129,6 @@ body {
   padding: 0; }
 
 .parallax {
-  font-size: 130%;
   display: block; }
 
 .title {
@@ -204,9 +206,6 @@ body {
 .underline {
   text-decoration: underline; }
 
-.text-left {
-  text-align: left; }
-
 .widget-title {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
@@ -219,3 +218,8 @@ p {
 
 .findMe {
   font-size: 80%; }
+
+.footerCreditLink {
+  display: block;
+  margin-top: 250px;
+  text-align: center; }
