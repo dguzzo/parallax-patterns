@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['bower_components/angular/angular.min.js', 'javascripts/<%= pkg.name %>.js'],
+        src: ['bower_components/angular/angular.min.js', 'javascripts/<%= pkg.name %>.js', 'javascripts/components/*.js'],
         dest: 'javascripts/<%= pkg.name %>.min.js'
       }
     },

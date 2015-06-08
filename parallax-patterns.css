@@ -12,7 +12,8 @@ body {
   padding: 0; }
 
 .parallax {
-  font-size: 130%; }
+  font-size: 130%;
+  display: block; }
 
 .title {
   font-family: "Source Sans Pro", sans-serif;

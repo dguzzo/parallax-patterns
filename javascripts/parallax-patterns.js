@@ -3,7 +3,8 @@
   .directive('backgrounds', function ($timeout) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/backgrounds.html'
+      templateUrl: 'templates/backgrounds.html',
+      controller: 'BackgroundsController'
     }
   });
 })();
