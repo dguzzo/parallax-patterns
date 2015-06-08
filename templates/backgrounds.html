@@ -1,9 +1,8 @@
 <!-- inspired greatly by http://keithclark.co.uk/articles/pure-css-parallax-websites/ -->
-
 <div id="group{{$index + 1}}" class="parallax__group" ng-repeat='background in getNumber(backgroundCount) track by $index'>
-  <div ng-if="($index+1) % cycleLength == 3" class="parallax__layer parallax__layer--fore"></div>
+  <div ng-if="indexCycleMod($index, 3)" class="parallax__layer parallax__layer--fore"></div>
   <div class="parallax__layer parallax__layer--base"></div>
-  <div ng-if="($index+1) % cycleLength == 2 || ($index+1) % cycleLength == 0" class="parallax__layer parallax__layer--back"></div>
-  <div ng-if="($index+1) % cycleLength == 0" class="parallax__layer parallax__layer--deep"></div>
+  <div ng-if="indexCycleMod($index, 2) || indexCycleMod($index, 0)" class="parallax__layer parallax__layer--back"></div>
+  <div ng-if="indexCycleMod($index, 0)" class="parallax__layer parallax__layer--deep"></div>
 </div>
 
